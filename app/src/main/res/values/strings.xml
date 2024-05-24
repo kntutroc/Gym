@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">Gym</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone Number</string>
+    <string name="select_photo">Select Profile Photo</string>
+    <string name="send_reset_email">Send Reset Email</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="birth_year">Birth Year</string>
+    <string name="height">Height (cm)</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="next">Next</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="height_format">Height\n%.1f cm</string>
+    <string name="weight_format">Weight\n%.1f kg</string>
+    <string name="imc_format">BMI\n%.2f</string>
+    <string name="title_activity_medidas">MeasurementsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="delete_routine">Delete Routine</string>
+    <string name="error_loading_routine">Error loading routine</string>
+    <string name="view_routine">View Routine</string>
+
+    <string name="profile_name">Username</string>
+    <string name="gender">Woman/Man</string>
+    <string name="gym_goer">Gym Enthusiast</string>
+    <string name="body_measurements">Body Measurements</string>
+    <string name="waist_measurement">Waist\n80cm</string>
+    <string name="hip_measurement">Hip\n95cm</string>
+    <string name="biceps_measurement">Biceps\n30cm</string>
+    <string name="leg_measurement">Leg\n50cm</string>
+    <string name="update_measurements">Update Measurements</string>
+
+    <string name="my_routines">My Routines</string>
+    <string name="no_routines">No routines available</string>
+    <string name="search_exercises">Search Exercises</string>
+    <string name="create_routine">Create Routine</string>
+
+    <string name="back">Back</string>
+    <string name="routine_name">Routine Name</string>
+    <string name="routine_details">Routine Details</string>
+    <string name="routine_data">Routine Data</string>
+
+    <string name="update_data">Update Data</string>
+    <string name="height_hint">Height (cm)</string>
+    <string name="weight_hint">Weight (kg)</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="personal_details">Personal Details</string>
+
+    <string name="enter_measurements">Enter Measurements</string>
+    <string name="waist_cm">Waist (cm)</string>
+    <string name="hip_cm">Hip (cm)</string>
+    <string name="biceps_cm">Biceps (cm)</string>
+    <string name="leg_cm">Leg (cm)</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_routine_name">Enter Routine Name</string>
+    <string name="select_day">Select Day</string>
+    <string name="select_muscle">Select Muscle</string>
+    <string name="search_exercise">Search Exercise</string>
+    <string name="add_exercise">+ Add Exercise</string>
+    <string name="remove_exercise">- Remove Exercise</string>
+    <string name="save_routine">Save Routine</string>
+    <string name="save_day">Save Day</string>
+    <string name="routine_name_hint">Routine Name</string>
+
+    <string name="filter_by_muscle">Filter by muscle:</string>
+    <string name="search_muscle">Search muscle</string>
+
+    <string name="my_profile">My Profile</string>
+    <string name="recommended_routines">Recommended Routines</string>
+
+    <string name="action_update_data">Update Data</string>
+    <string name="cancel">Cancel</string>
+
+    <string-array name="days_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="background_color">#FFBB86FC</color>
+        <color name="button_color">#330435</color>
+        <color name="button_color2">#750B78</color>
+        <color name="button_color3">#7E0606</color>
+        <color name="translucent_white">#80FFFFFF</color>
+        <color name="translucent_gray">#80CCCCCC</color>
+
+        <color name="beginner_color">#4CAF50</color> <!-- Verde suave -->
+        <color name="intermediate_color">#FFAE22</color> <!-- Amarillo suave -->
+        <color name="advanced_color">#F44336</color> <!-- Rojo suave -->
+
+        <color name="principiantes_color">#FF5722</color>
+        <color name="intermedios_color">#2196F3</color>
+        <color name="avanzados_color">#4CAF50</color>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402507422313",
+    "project_id": "gymask-93efe",
+    "storage_bucket": "gymask-93efe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402507422313:android:8c66ec12f93a30b645e0f8",
+        "android_client_info": {
+          "package_name": "programacion.kimberly.gym"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAau4zCfyxjzMyUm1dTDwt7t1vLSOiQPSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
