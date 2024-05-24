@@ -58,8 +58,6 @@ dependencies {
     // Otros
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.ar:core:1.43.0")
-    implementation("androidx.test.ext:junit-ktx:1.1.5")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
@@ -68,14 +66,18 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("androidx.activity:activity:1.9.0")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.test:core-ktx:1.5.0")
+    implementation("androidx.test.ext:junit-ktx:1.1.5")
 
     // Pruebas unitarias
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-core:3.11.2")
     testImplementation("org.robolectric:robolectric:4.5.1")
     testImplementation("io.mockk:mockk:1.12.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation("org.robolectric:robolectric:4.5.1")
+
 
     // Pruebas instrumentadas
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

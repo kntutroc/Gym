@@ -148,7 +148,7 @@ class FirstActivity : BaseActivity() {
         }
     }
 
-    private fun showChatDialog() {
+    fun showChatDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_chat, null)

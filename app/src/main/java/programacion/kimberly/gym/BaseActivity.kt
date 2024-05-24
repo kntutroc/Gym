@@ -44,6 +44,4 @@ open class BaseActivity : AppCompatActivity() {
                 .into(profileImageView)
         }
     }
-
-
 }
