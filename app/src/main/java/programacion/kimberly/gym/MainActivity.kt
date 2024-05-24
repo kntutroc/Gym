@@ -11,9 +11,9 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : BaseActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    lateinit var auth: FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

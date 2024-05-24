@@ -13,20 +13,20 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class NextRegisterActivity : BaseActivity() {
 
-    private lateinit var editTextFirstName: EditText
-    private lateinit var editTextLastName: EditText
-    private lateinit var editTextPhoneNumber: EditText
-    private lateinit var editTextBirthYear: EditText
-    private lateinit var editTextHeight: EditText
-    private lateinit var editTextWeight: EditText
-    private lateinit var radioGroupGender: RadioGroup
+    lateinit var editTextFirstName: EditText
+    lateinit var editTextLastName: EditText
+    lateinit var editTextPhoneNumber: EditText
+    lateinit var editTextBirthYear: EditText
+    lateinit var editTextHeight: EditText
+    lateinit var editTextWeight: EditText
+    lateinit var radioGroupGender: RadioGroup
     private lateinit var radioButtonMale: RadioButton
     private lateinit var radioButtonFemale: RadioButton
     private lateinit var buttonContinue: Button
 
-    private val firestore = FirebaseFirestore.getInstance()
+    var firestore = FirebaseFirestore.getInstance()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_next_register)
 
@@ -55,7 +55,7 @@ class NextRegisterActivity : BaseActivity() {
         }
     }
 
-    private fun savePersonalInformation(uid: String) {
+    fun savePersonalInformation(uid: String) {
         val selectedGenderId = radioGroupGender.checkedRadioButtonId
         val gender = when (selectedGenderId) {
             R.id.radioButtonMale -> "Male"

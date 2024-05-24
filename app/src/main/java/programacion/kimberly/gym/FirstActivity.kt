@@ -1,10 +1,13 @@
 package programacion.kimberly.gym
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -14,9 +17,11 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import com.bumptech.glide.Glide
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import programacion.kimberly.gym.databinding.ActivityFirstBinding
+import java.util.Date
 
 class FirstActivity : BaseActivity() {
 
@@ -31,10 +36,12 @@ class FirstActivity : BaseActivity() {
 
         setSupportActionBar(binding.appBarFirst.toolbar)
 
-        binding.appBarFirst.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        val fabButton = findViewById<FloatingActionButton>(R.id.fab)
+        fabButton.setOnClickListener {
+            showChatDialog()
         }
+
+
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -140,4 +147,58 @@ class FirstActivity : BaseActivity() {
                 }
         }
     }
+
+    private fun showChatDialog() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_chat, null)
+        dialogBuilder.setView(dialogView)
+
+        dialogBuilder.setTitle("Issues")
+        dialogBuilder.setPositiveButton("Send") { dialog, _ ->
+            val nameEditText = dialogView.findViewById<EditText>(R.id.editTextName)
+            val emailEditText = dialogView.findViewById<EditText>(R.id.editTextEmail)
+            val messageEditText = dialogView.findViewById<EditText>(R.id.editTextMessage)
+
+            val name = nameEditText.text.toString()
+            val email = emailEditText.text.toString()
+            val message = messageEditText.text.toString()
+
+            // Obtener la instancia de Firestore
+            val firestore = FirebaseFirestore.getInstance()
+
+            // Obtener el ID del usuario actualmente autenticado
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            val userId = currentUser?.uid
+
+            // Crear un nuevo documento en la colección "issues" usando un ID único generado
+            val issueData = hashMapOf(
+                "name" to name,
+                "email" to email,
+                "message" to message,
+                "timestamp" to Date().time
+            )
+            if (userId != null) {
+                firestore.collection("issues").document(userId)
+                    .set(issueData)
+                    .addOnSuccessListener {
+                        // El documento se guardó exitosamente en Firestore
+                        Toast.makeText(this, "Issues saved successfully", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { e ->
+                        // Ocurrió un error al guardar el documento en Firestore
+                        Toast.makeText(this, "Failed to save issues", Toast.LENGTH_SHORT).show()
+                    }
+            }
+
+            dialog.dismiss()
+        }
+        dialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog = dialogBuilder.create()
+        alertDialog.show()
+    }
 }
+

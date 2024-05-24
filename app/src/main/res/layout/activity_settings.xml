@@ -1,10 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/main"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.bar.SettingsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonSignOut">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policies"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="At our app, we take your privacy seriously and are committed to protecting your personal information. Please read our privacy policies and terms of use below:"
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Data Collection"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We collect certain personal information from you, such as your name and email address, to provide you with a personalized experience within our app. We do not share this information with any third parties without your consent."
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Data Usage"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We use the collected data to improve our app's functionality and provide you with a better user experience. This may include analyzing usage patterns, offering personalized recommendations, and displaying relevant content."
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Data Security"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We implement strict security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, please note that no method of transmission over the internet or electronic storage is 100% secure."
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Third-Party Services"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Our app may integrate with third-party services, such as social media platforms, for enhanced functionality. Please review the privacy policies of these services before using them within our app."
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="Sign Out"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/side_nav_bar"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

@@ -15,7 +15,7 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Privacy Policies</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -92,6 +92,14 @@
 
     <string name="action_update_data">Update Data</string>
     <string name="cancel">Cancel</string>
+
+    <string name="login_info">Login: %s</string>
+    <string name="sign_out">Sign out</string>
+
+    <string name="dialog_message">If you have any issues with the app, please send us a message and we will respond as soon as possible.</string>
+    <string name="dialog_name_hint">Name</string>
+    <string name="dialog_email_hint">Email</string>
+    <string name="dialog_message_hint">Message</string>
 
     <string-array name="days_array">
         <item>Monday</item>

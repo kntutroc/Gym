@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : BaseActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    lateinit var auth: FirebaseAuth
     private lateinit var editTextEmail: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var buttonNext: Button
