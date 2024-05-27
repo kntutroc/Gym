@@ -17,10 +17,10 @@ class ResetPasswordActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_password)
 
-        // Inicializar la instancia de FirebaseAuth
+        // Inicializar firebase auth
         auth = FirebaseAuth.getInstance()
 
-        // Referencias a las vistas
+        // Inicializar los views
         val editTextEmail: EditText = findViewById(R.id.editTextEmail)
         val buttonResetPassword: Button = findViewById(R.id.buttonResetPassword)
 
@@ -33,20 +33,17 @@ class ResetPasswordActivity : BaseActivity() {
                 auth.sendPasswordResetEmail(email)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            // Notificar al usuario que el correo electrónico ha sido enviado
                             Toast.makeText(this, "Reset password email sent.", Toast.LENGTH_SHORT).show()
 
                             // Navegar a MainActivity
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
-                            finish() // Finaliza la actividad actual para que el usuario no pueda volver a ella presionando el botón Atrás
+                            finish() // Finaliza la actividad actual para que el usuario no pueda volver a ella presionando el botón atrás
                         } else {
-                            // Notificar al usuario que ha ocurrido un error
                             Toast.makeText(this, "Failed to send reset email.", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
-                // Notificar al usuario que el campo de correo electrónico está vacío
                 Toast.makeText(this, "Please enter your email.", Toast.LENGTH_SHORT).show()
             }
         }

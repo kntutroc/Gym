@@ -25,7 +25,7 @@ class AdvancedActivity : AppCompatActivity() {
             insets
         }
 
-        // Configurar el botón de retroceso
+        // Volver atrás
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed()

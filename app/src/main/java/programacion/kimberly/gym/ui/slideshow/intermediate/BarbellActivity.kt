@@ -27,6 +27,7 @@ class BarbellActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cardio_routine)
 
+        // Volver atrás
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed()

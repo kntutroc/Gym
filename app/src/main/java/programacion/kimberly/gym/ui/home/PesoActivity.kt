@@ -49,7 +49,7 @@ class PesoActivity : BaseActivity() {
         findViewById<EditText>(R.id.editTextWeight).setText("")
 
         // Mostrar mensaje de éxito
-        Toast.makeText(this, "Medidas borradas", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Deleted measurements", Toast.LENGTH_SHORT).show()
     }
 
     private fun saveMeasurements() {
@@ -59,7 +59,7 @@ class PesoActivity : BaseActivity() {
             val weightText = findViewById<EditText>(R.id.editTextWeight).text.toString()
 
             if (heightText.isBlank() || weightText.isBlank()) {
-                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please complete all fields", Toast.LENGTH_SHORT).show()
                 return
             }
 
@@ -75,15 +75,13 @@ class PesoActivity : BaseActivity() {
                     )
                 )
                 .addOnSuccessListener {
-                    // Mostrar mensaje de éxito
-                    Toast.makeText(this, "Medidas actualizadas", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Updated measurements", Toast.LENGTH_SHORT).show()
 
                     // Regresar a la actividad anterior
                     onBackPressed()
                 }
                 .addOnFailureListener { e ->
-                    // Mostrar mensaje de error
-                    Toast.makeText(this, "Error al guardar las medidas: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error saving measurements: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
     }

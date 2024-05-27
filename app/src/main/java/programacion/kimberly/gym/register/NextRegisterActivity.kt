@@ -30,7 +30,7 @@ class NextRegisterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_next_register)
 
-        // Inicialización de vistas
+        // Inicializaciar views
         editTextFirstName = findViewById(R.id.editTextFirstName)
         editTextLastName = findViewById(R.id.editTextLastName)
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber)
@@ -68,7 +68,7 @@ class NextRegisterActivity : BaseActivity() {
             return
         }
 
-        // Conviértelo a tipos numéricos apropiados antes de guardar
+        //  Pasamos los datos a un tipo numérico
         val phoneNumber = editTextPhoneNumber.text.toString().trim().toLongOrNull() ?: 0L  // Convertir a Long
         val birthYear = editTextBirthYear.text.toString().trim().toIntOrNull() ?: 0  // Convertir a Int
         val height = editTextHeight.text.toString().trim().toDoubleOrNull() ?: 0.0  // Convertir a Double
@@ -77,24 +77,25 @@ class NextRegisterActivity : BaseActivity() {
         val user = hashMapOf(
             "firstName" to editTextFirstName.text.toString().trim(),
             "lastName" to editTextLastName.text.toString().trim(),
-            "phoneNumber" to phoneNumber,  // Almacenar como Long
-            "birthYear" to birthYear,  // Almacenar como Int
-            "height" to height,  // Almacenar como Double
-            "weight" to weight,  // Almacenar como Double
-            "gender" to gender  // Almacenar como String
+            "phoneNumber" to phoneNumber,
+            "birthYear" to birthYear,
+            "height" to height,
+            "weight" to weight,
+            "gender" to gender
         )
 
+        // Guardamos los datos en el firestore
         firestore.collection("users").document(uid)
             .set(user)
             .addOnSuccessListener {
                 Toast.makeText(this, "Personal information saved successfully", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)  // Navegar a MainActivity
                 startActivity(intent)
-                finish()  // Finalizar esta actividad
+                finish()
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error saving personal information: ${e.message}", Toast.LENGTH_SHORT).show()
-                finish()  // Finalizar esta actividad en caso de error
+                finish()
             }
     }
 }

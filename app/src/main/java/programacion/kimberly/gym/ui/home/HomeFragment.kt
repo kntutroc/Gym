@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
 
         val user = FirebaseAuth.getInstance().currentUser
         if (user == null) {
-            // Redirect to MainActivity if there is no authenticated user
+            // Redirecciona a la página principal si no hay usuario autenticado
             Toast.makeText(context, "No user signed in.", Toast.LENGTH_SHORT).show()
             val intent = Intent(activity, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
             return
         }
 
-        // Set up click listeners for buttons leading to MedidasActivity
+        // Bindeamos los botones
         binding.expandOptionsButton.setOnClickListener {
             startActivity(Intent(activity, PesoActivity::class.java))
         }
@@ -56,17 +56,17 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, MedidasActivity::class.java))
         }
 
-        // Subscribe to changes in the user document
+        // Nos suscribimos a los cambios
         userDocumentListener = firestore.collection("users").document(user.uid)
             .addSnapshotListener { userDocument, error ->
                 if (error != null) {
-                    // Handle the error
+                    // Manejamos el error
                     Toast.makeText(context, "Error retrieving user data: ${error.message}", Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
 
                 if (userDocument != null && userDocument.exists()) {
-                    // Get user data
+                    // Obtenemos los datos
                     val firstName = userDocument.getString("firstName") ?: ""
                     val lastName = userDocument.getString("lastName") ?: ""
                     val fullName = "$firstName $lastName"
@@ -74,7 +74,7 @@ class HomeFragment : Fragment() {
                     val height = userDocument.getDouble("height") ?: 0.0
                     val weight = userDocument.getDouble("weight") ?: 0.0
 
-                    // Update the UI
+                    // Updateamos UI con los datos
                     binding.nameTextView.text = fullName
                     binding.genderTextView.text = gender
                     binding.heightTextView.text = "Height \n$height"
@@ -82,7 +82,7 @@ class HomeFragment : Fragment() {
                     val bmi = calculateBMI(height, weight)
                     binding.imcTextView.text = "BMI \n%.2f".format(bmi)
 
-                    // Load the profile photo
+                    // Cargamos la foto de perfil
                     val userId = FirebaseAuth.getInstance().currentUser?.uid
 
                     if (userId != null) {
@@ -91,24 +91,23 @@ class HomeFragment : Fragment() {
                         profilePhotoRef.get()
                             .addOnSuccessListener { documentSnapshot ->
                                 if (documentSnapshot.exists()) {
-                                    // If the document exists, get the profile photo URL and load it using Glide
+                                    // Cargamos con Glide la foto
                                     val photoUrl = documentSnapshot.getString("photoUrl")
                                     if (photoUrl != null) {
                                         Glide.with(requireContext())
                                             .load(photoUrl)
-                                            .placeholder(R.drawable.default_profile_picture) // Placeholder image while loading the photo
-                                            .error(R.drawable.default_profile_picture) // Default image in case of error
+                                            .placeholder(R.drawable.default_profile_picture)
+                                            .error(R.drawable.default_profile_picture) // Default image en caso deerror
                                             .into(binding.profileImageView)
                                     }
                                 } else {
-                                    // If the document does not exist, load the default image from drawable
+                                    // Si no existe el documento carga la foto por defecto
                                     Glide.with(requireContext())
                                         .load(R.drawable.default_profile_picture)
                                         .into(binding.profileImageView)
                                 }
                             }
                             .addOnFailureListener { e ->
-                                // Handle the error while retrieving the document
                                 Toast.makeText(context, "Error retrieving profile photo: ${e.message}", Toast.LENGTH_SHORT).show()
                             }
                     }
@@ -117,29 +116,29 @@ class HomeFragment : Fragment() {
                 }
             }
 
-        // Subscribe to changes in the measurements document
+        // Nos suscribimos a los datos
         measurementsDocumentListener = firestore.collection("measurements").document(user.uid)
             .addSnapshotListener { measurementDocument, error ->
                 if (error != null) {
-                    // Handle the error
+                    // Manejamos error
                     Toast.makeText(context, "Error retrieving body measurements: ${error.message}", Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
 
                 if (measurementDocument != null && measurementDocument.exists()) {
-                    // Get body measurements
+
                     val waistMeasurement = measurementDocument.getDouble("waistMeasurement") ?: 0.0
                     val hipMeasurement = measurementDocument.getDouble("hipMeasurement") ?: 0.0
                     val bicepsMeasurement = measurementDocument.getDouble("bicepsMeasurement") ?: 0.0
                     val legMeasurement = measurementDocument.getDouble("legMeasurement") ?: 0.0
 
-                    // Update the UI
+
                     binding.waistMeasurementTextView.text = "Waist\n$waistMeasurement"
                     binding.hipMeasurementTextView.text = "Hip\n$hipMeasurement"
                     binding.bicepsMeasurementTextView.text = "Biceps\n$bicepsMeasurement"
                     binding.legMeasurementTextView.text = "Legs\n$legMeasurement"
                 } else {
-                    // If there are no body measurements data, show default values
+
                     binding.waistMeasurementTextView.text = "Waist\n0.0"
                     binding.hipMeasurementTextView.text = "Hip\n0.0"
                     binding.bicepsMeasurementTextView.text = "Biceps\n0.0"

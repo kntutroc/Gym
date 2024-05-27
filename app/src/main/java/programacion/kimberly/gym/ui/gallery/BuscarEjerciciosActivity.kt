@@ -57,7 +57,7 @@ class BuscarEjerciciosActivity : AppCompatActivity() {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         difficultySpinner.adapter = spinnerAdapter
 
-        // Escuchar los cambios en el texto de búsqueda
+        // Escuchar los cambios en el texto de búsqueda (para cambios en vivo)
         muscleSearchEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -93,7 +93,7 @@ class BuscarEjerciciosActivity : AppCompatActivity() {
         val apiKey = "t/BcF3GrFaiBlAowPbuH8w==I4TONEUtBQHtGTqt"
 
         lifecycleScope.launch(Dispatchers.IO) {
-            // Construir la URL con los parámetros de búsqueda
+            // Configuramos la API
             val urlBuilder = StringBuilder(apiBaseUrl)
             if (muscle.isNotEmpty()) {
                 urlBuilder.append("?muscle=").append(URLEncoder.encode(muscle, "UTF-8"))
@@ -119,7 +119,7 @@ class BuscarEjerciciosActivity : AppCompatActivity() {
                 null
             }
 
-            // Actualizar el TextView en el hilo principal con los resultados
+            // Actualizar el TextView con los datos
             withContext(Dispatchers.Main) {
                 if (response.isNullOrEmpty()) {
                     exercisesTextView.text = "No exercises found for this search"
@@ -143,7 +143,7 @@ class BuscarEjerciciosActivity : AppCompatActivity() {
                                     "beginner" -> ContextCompat.getColor(this@BuscarEjerciciosActivity, R.color.beginner_color)
                                     "intermediate" -> ContextCompat.getColor(this@BuscarEjerciciosActivity, R.color.intermediate_color)
                                     "expert" -> ContextCompat.getColor(this@BuscarEjerciciosActivity, R.color.advanced_color)
-                                    else -> Color.TRANSPARENT // Default, no background color
+                                    else -> Color.TRANSPARENT
                                 }
                                 difficultySpannable.setSpan(BackgroundColorSpan(difficultyColor), 0, exercise.difficulty.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
                                 spannableStringBuilder.append(difficultySpannable)
@@ -157,7 +157,6 @@ class BuscarEjerciciosActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun parseExercises(response: String): List<Exercise> {
         val mapper = ObjectMapper()
         val rootNode = mapper.readTree(response)

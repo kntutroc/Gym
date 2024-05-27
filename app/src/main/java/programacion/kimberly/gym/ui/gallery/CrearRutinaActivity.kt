@@ -1,6 +1,7 @@
 package programacion.kimberly.gym.ui.gallery
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,7 +35,7 @@ class CrearRutinaActivity : AppCompatActivity() {
     private lateinit var saveDayButton: Button
     private lateinit var saveRoutineButton: Button
 
-    // Estructura temporal para almacenar los ejercicios de cada día
+    // Para almacenar los ejercicios de cada día
     private val routineData = hashMapOf<String, MutableList<String>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,13 +74,11 @@ class CrearRutinaActivity : AppCompatActivity() {
         }
 
 
-        // Encuentra el botón de añadir ejercicio y configura su listener
         val addExerciseButton: Button = findViewById(R.id.addExerciseButton)
         addExerciseButton.setOnClickListener {
             addNewExerciseSpinner()
         }
 
-        // Encuentra el botón de quitar ejercicio y configura su listener
         val removeExerciseButton: Button = findViewById(R.id.removeExerciseButton)
         removeExerciseButton.setOnClickListener {
             removeLastExerciseSpinner()
@@ -97,7 +96,7 @@ class CrearRutinaActivity : AppCompatActivity() {
         exercisesForDay.clear() // Limpia la lista actual para evitar duplicados
         exercisesForDay.addAll(selectedExercises)
 
-        Toast.makeText(this, "Día guardado con éxito.", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Day saved successfully.", Toast.LENGTH_SHORT).show()
         clearExerciseSpinners() // Limpia los Spinners para el siguiente día
     }
 
@@ -109,13 +108,13 @@ class CrearRutinaActivity : AppCompatActivity() {
         val routineName = routineNameEditText.text.toString().trim()
 
         if (routineName.isEmpty()) {
-            Toast.makeText(this, "Por favor, ingresa un nombre para la rutina.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter a name for the routine.", Toast.LENGTH_SHORT).show()
             return
         }
 
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser == null) {
-            Toast.makeText(this, "Usuario no autenticado.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Unauthenticated user.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -135,18 +134,18 @@ class CrearRutinaActivity : AppCompatActivity() {
                     )
                     routinesCollection.add(fullRoutineData)
                         .addOnSuccessListener {
-                            Toast.makeText(this, "Rutina guardada con éxito.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Routine saved successfully.", Toast.LENGTH_SHORT).show()
                             finish() // Regresar a la pantalla anterior
                         }
                         .addOnFailureListener { e ->
-                            Toast.makeText(this, "Error al guardar la rutina: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Error saving routine: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
                         }
                 } else {
-                    Toast.makeText(this, "Una rutina con ese nombre ya existe.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "A routine with that name already exists.", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Error al verificar el nombre de la rutina: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error checking routine name: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -180,13 +179,12 @@ class CrearRutinaActivity : AppCompatActivity() {
 
             withContext(Dispatchers.Main) {
                 if (response.isNullOrEmpty()) {
-                    // Manejar la respuesta vacía o nula aquí
+                    Log.e("Exercises", "Response is null or empty")
                 } else {
                     try {
                         val exercises = parseExercises(response)
                         updateExerciseSpinner(exercises)
                     } catch (e: Exception) {
-                        // Manejar el error de parseo aquí
                     }
                 }
             }
@@ -202,7 +200,7 @@ class CrearRutinaActivity : AppCompatActivity() {
     }
 
     private fun removeLastExerciseSpinner() {
-        // Verifica si hay Spinners en el contenedor
+        // Verifica si hay Spinners
         if (spinnerContainer.childCount > 0) {
             // Elimina el último Spinner agregado
             spinnerContainer.removeViewAt(spinnerContainer.childCount - 1)
@@ -218,7 +216,7 @@ class CrearRutinaActivity : AppCompatActivity() {
         layoutParams.setMargins(0, 8, 0, 8) // Ajusta los márgenes si es necesario
         newSpinner.layoutParams = layoutParams
 
-        // Configura el adaptador del nuevo Spinner con la lista de ejercicios
+        // Configura el adapter con la lista de ejercicios
         val exerciseNames = exercisesList.map { it.name }
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, exerciseNames)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

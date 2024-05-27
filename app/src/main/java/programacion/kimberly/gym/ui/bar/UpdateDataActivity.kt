@@ -43,7 +43,7 @@ class UpdateDataActivity : AppCompatActivity() {
             insets
         }
 
-        // Initialize views
+        // Inicializar views
         editTextFirstName = findViewById(R.id.editTextFirstName)
         editTextLastName = findViewById(R.id.editTextLastName)
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber)
@@ -53,7 +53,7 @@ class UpdateDataActivity : AppCompatActivity() {
         backButton = findViewById(R.id.backButton)
         buttonSelectPhoto = findViewById(R.id.buttonSelectPhoto)
 
-        // Get reference to Firebase Storage
+        // Storage firebase y comprobar que el usuario esté autenticado
         storageReference = FirebaseStorage.getInstance().reference
 
         if (FirebaseAuth.getInstance().currentUser != null) {
@@ -62,6 +62,7 @@ class UpdateDataActivity : AppCompatActivity() {
             Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
         }
 
+        //  Listener botones
         buttonSave.setOnClickListener {
             saveData()
         }

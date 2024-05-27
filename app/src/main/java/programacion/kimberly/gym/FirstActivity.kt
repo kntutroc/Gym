@@ -41,8 +41,6 @@ class FirstActivity : BaseActivity() {
             showChatDialog()
         }
 
-
-
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_first)
@@ -81,7 +79,7 @@ class FirstActivity : BaseActivity() {
             val emailTextView: TextView = headerView.findViewById(R.id.textViewEmail)
             val profileImageView: ImageView = headerView.findViewById(R.id.imageView)
 
-            // Load the profile photo
+            // Cargamos la foto de perfil
             val userId = FirebaseAuth.getInstance().currentUser?.uid
 
             if (userId != null) {
@@ -90,22 +88,19 @@ class FirstActivity : BaseActivity() {
                 profilePhotoRef.get()
                     .addOnSuccessListener { documentSnapshot ->
                         if (documentSnapshot.exists()) {
-                            // If the document exists, get the profile photo URL and load it using Glide
                             val photoUrl = documentSnapshot.getString("photoUrl")
                             if (photoUrl != null) {
                                 Glide.with(this)
                                     .load(photoUrl)
-                                    .placeholder(R.drawable.default_profile_picture) // Placeholder image while loading the photo
-                                    .error(R.drawable.default_profile_picture) // Default image in case of error
+                                    .placeholder(R.drawable.default_profile_picture)
+                                    .error(R.drawable.default_profile_picture) // Default image en caso de error
                                     .into(profileImageView)
                             } else {
-                                // If the photo URL is null, load the default image from drawable
                                 Glide.with(this)
                                     .load(R.drawable.default_profile_picture)
                                     .into(profileImageView)
                             }
                         } else {
-                            // If the document does not exist, load the default image from drawable
                             Glide.with(this)
                                 .load(R.drawable.default_profile_picture)
                                 .into(profileImageView)
@@ -121,7 +116,7 @@ class FirstActivity : BaseActivity() {
             }
 
             // Actualizar el correo electrónico
-            emailTextView.text = user.email ?: "Correo no disponible"
+            emailTextView.text = user.email ?: "Email not available"
 
             // Recuperar y actualizar el nombre del usuario desde Firestore
             val firestore = FirebaseFirestore.getInstance()

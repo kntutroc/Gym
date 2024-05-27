@@ -45,7 +45,7 @@ class VerRutina : AppCompatActivity() {
                         if (documentSnapshot.exists()) {
                             val routineName = documentSnapshot.getString("name") ?: "Sin nombre"
 
-                            // Obtener los datos del día de la semana y los ejercicios correspondientes
+                            // Obtenemos los datos de la rutina
                             val routineData = documentSnapshot.get("days") as? Map<String, List<String>> ?: emptyMap()
                             val routineText = buildRoutineText(routineData)
 
@@ -53,17 +53,17 @@ class VerRutina : AppCompatActivity() {
                             binding.routineNameTextView.text = routineName
                             binding.routineDataTextView.text = routineText
                         } else {
-                            Log.e(TAG, "No se encontró la rutina")
+                            Log.e(TAG, "Routine not found")
                         }
                     }
                     .addOnFailureListener { e ->
-                        Log.e(TAG, "Error al obtener la rutina: ", e)
+                        Log.e(TAG, "Error getting routine: ", e)
                     }
             } else {
-                Log.e(TAG, "Error: Usuario no autenticado")
+                Log.e(TAG, "Error: User not authenticated")
             }
         } else {
-            Log.e(TAG, "Error: ID de rutina no proporcionado")
+            Log.e(TAG, "Error: Routine ID not provided")
         }
     }
 
@@ -76,7 +76,7 @@ class VerRutina : AppCompatActivity() {
             for (exercise in exercises) {
                 sb.append("- $exercise\n")
             }
-            sb.append("\n") // Añadir un espacio entre los días
+            sb.append("\n") // Espacio entre los días
         }
         return sb
     }

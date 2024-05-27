@@ -35,8 +35,8 @@ open class BaseActivity : AppCompatActivity() {
         if (photoUrl != null) {
             Glide.with(profileImageView.context)
                 .load(photoUrl)
-                .placeholder(R.drawable.default_profile_picture) // Placeholder image while loading the photo
-                .error(R.drawable.default_profile_picture) // Default image in case of error
+                .placeholder(R.drawable.default_profile_picture)
+                .error(R.drawable.default_profile_picture) // Default image en caso de error
                 .into(profileImageView)
         } else {
             Glide.with(profileImageView.context)

@@ -30,7 +30,7 @@ class SlideshowFragment : Fragment() {
         // Mostrar el diálogo con indicaciones y advertencias
         showInstructionsDialog()
 
-        // Set the on click listeners for the CardViews
+        // Asignamos los listener a cada intent
         binding.beginnerCardView.setOnClickListener {
             val intent = Intent(requireContext(), BeginnerActivity::class.java)
             startActivity(intent)
@@ -54,7 +54,7 @@ class SlideshowFragment : Fragment() {
         _binding = null
     }
 
-    // Extension function to convert dp to px
+    // Convertir dp to px
     private fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).roundToInt()

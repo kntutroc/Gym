@@ -25,13 +25,13 @@ class IntermediateActivity : AppCompatActivity() {
             insets
         }
 
-        // Configurar el botón de retroceso
+        // Volver atrás
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed()
         }
 
-        // Configurar los CardView para navegar a las actividades correspondientes
+        // Configurar los CardViews
         findViewById<CardView>(R.id.barbellCardView).setOnClickListener {
             startActivity(Intent(this, BarbellActivity::class.java))
         }

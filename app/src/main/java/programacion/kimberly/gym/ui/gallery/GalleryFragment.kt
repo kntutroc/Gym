@@ -49,9 +49,9 @@ class GalleryFragment : Fragment() {
             // Suscribirse a los cambios en la colección de rutinas
             routinesListener = routinesRef.addSnapshotListener { querySnapshot, error ->
                 if (error != null) {
-                    // Manejar el error
-                    Log.e(TAG, "Error al obtener las rutinas: ", error)
-                    Toast.makeText(context, "Error al obtener las rutinas: ${error.message}", Toast.LENGTH_SHORT).show()
+                    // Manejamos el error
+                    Log.e(TAG, "Error getting routines: ", error)
+                    Toast.makeText(context, "Error getting routines: ${error.message}", Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
 
@@ -59,7 +59,7 @@ class GalleryFragment : Fragment() {
                     val routines = querySnapshot.documents.map { document ->
                         Routine(
                             id = document.id,
-                            name = document.getString("name") ?: "Sin nombre",
+                            name = document.getString("name") ?: "Nameless",
                         )
                     }
 
@@ -69,11 +69,11 @@ class GalleryFragment : Fragment() {
                             onDeleteClick = { routine ->
                                 routinesRef.document(routine.id).delete()
                                     .addOnSuccessListener {
-                                        Toast.makeText(context, "Rutina eliminada", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(context, "Routine removed", Toast.LENGTH_SHORT).show()
                                     }
                                     .addOnFailureListener { e ->
-                                        Log.e(TAG, "Error al eliminar la rutina: ", e)
-                                        Toast.makeText(context, "Error al eliminar la rutina: ${e.message}", Toast.LENGTH_SHORT).show()
+                                        Log.e(TAG, "Error deleting routine: ", e)
+                                        Toast.makeText(context, "Error deleting routine: ${e.message}", Toast.LENGTH_SHORT).show()
                                     }
                             },
                             onViewClick = { routine ->
@@ -103,15 +103,15 @@ class GalleryFragment : Fragment() {
                 startActivity(intent)
             }
         } else {
-            Log.e(TAG, "Error: Usuario no autenticado")
-            Toast.makeText(context, "Error: Usuario no autenticado", Toast.LENGTH_SHORT).show()
+            Log.e(TAG, "Error: User not authenticated")
+            Toast.makeText(context, "Error: User not authenticated", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        // Detener la escucha de cambios en la colección de rutinas
+        // Detener la escucha
         routinesListener.remove()
     }
 }

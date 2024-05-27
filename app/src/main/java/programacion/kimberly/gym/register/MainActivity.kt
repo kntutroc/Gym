@@ -19,9 +19,9 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         auth = FirebaseAuth.getInstance()
 
+        //  Inicializar views
         val emailEditText: EditText = findViewById(R.id.editTextEmail)
         val passwordEditText: EditText = findViewById(R.id.editTextPassword)
         val loginButton: Button = findViewById(R.id.buttonLogin)
@@ -43,7 +43,7 @@ class MainActivity : BaseActivity() {
                                 Toast.LENGTH_SHORT).show()
 
                             startActivity(intent)
-                            finish() // Finaliza la actividad actual para que el usuario no pueda volver a ella presionando el botón Atrás
+                            finish() // Finaliza la actividad actual para que el usuario no pueda volver a ella presionando el botón atrás
                         } else {
                             // Si el inicio de sesión falla, muestra un mensaje al usuario
                             Toast.makeText(baseContext, "Authentication failed.",
@@ -73,6 +73,7 @@ class MainActivity : BaseActivity() {
         // Verificar si el usuario está logueado
         val currentUser = auth.currentUser
         if (currentUser != null) {
+
             // Usuario ya está logueado, ir a la pantalla principal
             val intent = Intent(this, FirstActivity::class.java)
             startActivity(intent)

@@ -77,20 +77,14 @@ class MedidasActivity : BaseActivity() {
             firestore.collection("measurements").document(uid)
                 .set(medidas)
                 .addOnSuccessListener {
-                    // Éxito al guardar las medidas
-                    // Mostrar mensaje de éxito
-                    Toast.makeText(this, "Medidas guardadas exitosamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Measurements saved successfully", Toast.LENGTH_SHORT).show()
                     finish() // Cerrar esta actividad después de guardar las medidas
                 }
                 .addOnFailureListener { e ->
-                    // Error al guardar las medidas
-                    // Mostrar mensaje de error
-                    Toast.makeText(this, "Error al guardar las medidas", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error saving measurements", Toast.LENGTH_SHORT).show()
                 }
         }
     }
-
-
 
     private fun borrarMedidas() {
         editTextWaist.text.clear()

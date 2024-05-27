@@ -18,6 +18,8 @@ class RoutineAdapter(
 ) : RecyclerView.Adapter<RoutineAdapter.RoutineViewHolder>() {
 
     inner class RoutineViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        // Inicializamos los views
         val routineNameTextView: TextView = itemView.findViewById(R.id.routineNameTextView)
         val deleteRoutineButton: ImageButton = itemView.findViewById(R.id.deleteRoutineButton)
         val viewRoutineButton: Button = itemView.findViewById(R.id.viewRoutineButton)

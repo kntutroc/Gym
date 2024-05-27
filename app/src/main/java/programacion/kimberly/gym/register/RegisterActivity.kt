@@ -20,15 +20,14 @@ class RegisterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Initialize Firebase Auth
+        // Inicializar auth
         auth = FirebaseAuth.getInstance()
 
-        // Bind views
+        // Bindeamos los views
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonNext = findViewById(R.id.buttonNext)
 
-        // Next button click listener
         buttonNext.setOnClickListener {
             createAccount()
         }
@@ -43,24 +42,23 @@ class RegisterActivity : BaseActivity() {
             return
         }
 
-        // Firebase authentication to create a user with email and password
+        // Creamos el usuario con la autenticación del usuario
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+
+                    // Updateamos la UI con los datos creados
                     val user = auth.currentUser
                     val uid = user?.uid
                     Toast.makeText(baseContext, "Authentication successful", Toast.LENGTH_SHORT).show()
 
-                    // Intent to start NextRegisterActivity
                     val intent = Intent(this, NextRegisterActivity::class.java).apply {
-                        // Pass the UID to the next activity if needed
+                        // Pasamos el UID al otro activity
                         putExtra("USER_UID", uid)
                     }
                     startActivity(intent)
                     finish() // Finish this activity
                 } else {
-                    // If sign in fails, display a message to the user.
                     Toast.makeText(baseContext, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }

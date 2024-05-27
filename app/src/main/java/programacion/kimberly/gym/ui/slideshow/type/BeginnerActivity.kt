@@ -23,13 +23,13 @@ class BeginnerActivity : AppCompatActivity() {
             insets
         }
 
-        // Configurar el botón de retroceso
+        // Volver atrás
         val backButton: ImageButton = findViewById(R.id.backButton)
         backButton.setOnClickListener {
             onBackPressed()
         }
 
-        // Configurar clics en las tarjetas
+        // Configurar clics en los cards
         findViewById<androidx.cardview.widget.CardView>(R.id.cardioRoutineCardView).setOnClickListener {
             startActivity(Intent(this, CardioRoutineActivity::class.java))
         }
