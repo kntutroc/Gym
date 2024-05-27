@@ -123,6 +123,11 @@
     <string name="kettlebell">Kettlebell</string>
     <string name="cable">Cable</string>
 
+    <string name="abductors_adductors">Abductors and Adductors</string>
+    <string name="triceps_pectoral">Triceps, Pectoral and Dorsal</string>
+    <string name="glutes_quads_calves">Glutes, Quads, and Calves</string>
+    <string name="biceps_upper_back_abs">Biceps, Upper Back, and Abs</string>
+
     <string-array name="days_array">
         <item>Monday</item>
         <item>Tuesday</item>

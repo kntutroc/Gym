@@ -17,6 +17,18 @@
         android:theme="@style/Theme.Gym"
         tools:targetApi="31">
         <activity
+            android:name=".ui.slideshow.advanced.BicepsUpperBackAbsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.advanced.GlutesQuadsCalvesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.advanced.TricepsPectoralActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.advanced.AbductorsAdductorsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.slideshow.intermediate.CableActivity"
             android:exported="false" />
         <activity

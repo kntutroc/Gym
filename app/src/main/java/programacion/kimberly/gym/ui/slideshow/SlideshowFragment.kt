@@ -1,5 +1,6 @@
 package programacion.kimberly.gym.ui.slideshow
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import programacion.kimberly.gym.ui.slideshow.type.BeginnerActivity
 import programacion.kimberly.gym.ui.slideshow.type.IntermediateActivity
 import programacion.kimberly.gym.ui.slideshow.type.AdvancedActivity
 import kotlin.math.roundToInt
+
 
 class SlideshowFragment : Fragment() {
 
@@ -24,6 +26,9 @@ class SlideshowFragment : Fragment() {
     ): View {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        // Mostrar el diálogo con indicaciones y advertencias
+        showInstructionsDialog()
 
         // Set the on click listeners for the CardViews
         binding.beginnerCardView.setOnClickListener {
@@ -53,5 +58,16 @@ class SlideshowFragment : Fragment() {
     private fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).roundToInt()
+    }
+
+    // Mostrar el diálogo con indicaciones y advertencias
+    private fun showInstructionsDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("INSTRUCTIONS AND WARNINGS")
+        builder.setMessage("There are several exercises per routine, choose the ones that suit you best. You can view all of them by swiping left or right. Good luck!")
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+        builder.create().show()
     }
 }
