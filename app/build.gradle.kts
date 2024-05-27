@@ -69,6 +69,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("androidx.test:core-ktx:1.5.0")
     implementation("androidx.test.ext:junit-ktx:1.1.5")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.activity:activity:1.9.0")
 
     // Pruebas unitarias
     testImplementation("junit:junit:4.13.2")
@@ -78,11 +80,19 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     testImplementation("org.robolectric:robolectric:4.5.1")
 
-
     // Pruebas instrumentadas
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("org.mockito:mockito-android:3.11.2")
+
+    // Gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // OkHttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
 }
 
 apply(plugin = "com.google.gms.google-services")

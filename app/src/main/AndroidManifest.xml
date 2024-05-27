@@ -17,6 +17,39 @@
         android:theme="@style/Theme.Gym"
         tools:targetApi="31">
         <activity
+            android:name=".ui.slideshow.intermediate.CableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.intermediate.KettlebellActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.intermediate.DumbbellActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.intermediate.BarbellActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.beginner.assisted.PilatesRoutineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.beginner.assisted.StrengthRoutineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.beginner.assisted.StrengthCardioRoutineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.beginner.assisted.CardioRoutineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.type.AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.type.IntermediateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.slideshow.type.BeginnerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.bar.UpdateDataActivity"
             android:exported="false" />
         <activity
@@ -46,7 +79,7 @@
             android:name=".ui.home.PesoActivity"
             android:exported="false" />
         <activity
-            android:name=".NextRegisterActivity"
+            android:name=".register.NextRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".FirstActivity"
@@ -54,13 +87,13 @@
             android:label="@string/title_activity_first"
             android:theme="@style/Theme.Gym.NoActionBar" />
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".register.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".register.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

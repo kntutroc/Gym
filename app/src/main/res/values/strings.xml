@@ -101,6 +101,28 @@
     <string name="dialog_email_hint">Email</string>
     <string name="dialog_message_hint">Message</string>
 
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="advanced">Advanced</string>
+
+    <string name="beginner_image_description">Beginner level routine image</string>
+    <string name="intermediate_image_description">Intermediate level routine image</string>
+    <string name="advanced_image_description">Advanced level routine image</string>
+
+    <string name="cardio_routine">Cardio Routine</string>
+    <string name="strength_cardio_routine">Strength + Cardio Routine</string>
+    <string name="strength_routine">Strength Routine</string>
+    <string name="body_weight_routine">Body weight Routine</string>
+    <string name="no_routines_available">No routines available at the moment.</string>
+    <string name="exercise_image">Exercise image</string>
+    <string name="elliptical_machine_routine">Elliptical Machine Routine</string>
+    <string name="band_routine">Band Routine</string>
+    <string name="assisted_routine">Assisted Routine</string>
+    <string name="barbell">Barbell</string>
+    <string name="dumbbell">Dumbbell</string>
+    <string name="kettlebell">Kettlebell</string>
+    <string name="cable">Cable</string>
+
     <string-array name="days_array">
         <item>Monday</item>
         <item>Tuesday</item>

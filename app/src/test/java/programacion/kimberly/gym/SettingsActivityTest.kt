@@ -13,6 +13,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.Shadows
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.LooperMode
+import programacion.kimberly.gym.register.MainActivity
 
 @RunWith(RobolectricTestRunner::class)
 @Config(manifest = Config.NONE)

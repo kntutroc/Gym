@@ -1,15 +1,15 @@
-package programacion.kimberly.gym
+package programacion.kimberly.gym.register
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import programacion.kimberly.gym.BaseActivity
+import programacion.kimberly.gym.R
 
 class NextRegisterActivity : BaseActivity() {
 

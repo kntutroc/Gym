@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import programacion.kimberly.gym.MainActivity
+import programacion.kimberly.gym.register.MainActivity
 import programacion.kimberly.gym.R
 import programacion.kimberly.gym.databinding.FragmentHomeBinding
 

@@ -4,54 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".ui.slideshow.SlideshowFragment"
+    android:background="@color/background_color2">
 
-    <!-- Principiantes -->
-    <TextView
-        android:id="@+id/text_principiantes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <!-- CardView for Beginner level -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/beginnerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:background="@color/principiantes_color"
-        android:gravity="center"
-        android:text="Principiantes"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@id/text_intermedios"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Intermedios -->
-    <TextView
-        android:id="@+id/text_intermedios"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@color/intermedios_color"
-        android:gravity="center"
-        android:text="Intermedios"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@id/text_avanzados"
-        app:layout_constraintStart_toEndOf="@id/text_principiantes"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Avanzados -->
-    <TextView
-        android:id="@+id/text_avanzados"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/avanzados_color"
-        android:gravity="center"
-        android:text="Avanzados"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_intermedios"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/intermediateCardView">
+
+        <ImageView
+            android:id="@+id/beginnerImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/beginner_image_description"
+            android:src="@drawable/beginner" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for Intermediate level -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/intermediateCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/beginnerCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/advancedCardView">
+
+        <ImageView
+            android:id="@+id/intermediateImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/intermediate_image_description"
+            android:src="@drawable/intermediate2" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView for Advanced level -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/advancedCardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/intermediateCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/advancedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/advanced_image_description"
+            android:src="@drawable/advanced" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

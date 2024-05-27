@@ -4,7 +4,6 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNotNull
 import org.junit.After
@@ -16,6 +15,8 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows
 import org.robolectric.annotation.Config
+import programacion.kimberly.gym.register.MainActivity
+import programacion.kimberly.gym.register.ResetPasswordActivity
 
 @RunWith(RobolectricTestRunner::class)
 @Config(manifest = Config.NONE)

@@ -3,7 +3,6 @@ package programacion.kimberly.gym
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -18,6 +17,8 @@ import org.robolectric.Robolectric
 import org.robolectric.Shadows
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowToast
+import programacion.kimberly.gym.register.NextRegisterActivity
+import programacion.kimberly.gym.register.RegisterActivity
 
 @RunWith(AndroidJUnit4::class)
 @Config(sdk = [30], manifest = Config.NONE)
