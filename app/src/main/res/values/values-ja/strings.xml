@@ -17,9 +17,9 @@
     <string name="nav_header_desc">ナビゲーションヘッダー</string>
     <string name="action_settings">プライバシーポリシー</string>
 
-    <string name="menu_home">ホーム</string>
-    <string name="menu_gallery">ギャラリー</string>
-    <string name="menu_slideshow">スライドショー</string>
+    <string name="menu_home">マイプロフィール</string>
+    <string name="menu_gallery">私のルーチン</string>
+    <string name="menu_slideshow">おすすめのルーチン</string>
 
     <string name="first_name">名</string>
     <string name="last_name">姓</string>

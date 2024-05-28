@@ -17,9 +17,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Privacy Policies</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">My Profile</string>
+    <string name="menu_gallery">My Routines</string>
+    <string name="menu_slideshow">Recommended Routines</string>
 
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>

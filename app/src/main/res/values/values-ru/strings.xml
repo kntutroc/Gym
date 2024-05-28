@@ -17,9 +17,9 @@
     <string name="nav_header_desc">Заголовок навигации</string>
     <string name="action_settings">Политика конфиденциальности</string>
 
-    <string name="menu_home">Главная</string>
-    <string name="menu_gallery">Галерея</string>
-    <string name="menu_slideshow">Слайдшоу</string>
+    <string name="menu_home">Мой Профиль</string>
+    <string name="menu_gallery">Мои Рутины</string>
+    <string name="menu_slideshow">Рекомендуемые Рутины</string>
 
     <string name="first_name">Имя</string>
     <string name="last_name">Фамилия</string>

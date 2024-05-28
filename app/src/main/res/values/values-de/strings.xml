@@ -17,9 +17,9 @@
     <string name="nav_header_desc">Navigationskopfzeile</string>
     <string name="action_settings">Datenschutzrichtlinien</string>
 
-    <string name="menu_home">Startseite</string>
-    <string name="menu_gallery">Galerie</string>
-    <string name="menu_slideshow">Diashow</string>
+    <string name="menu_home">Mein Profil</string>
+    <string name="menu_gallery">Meine Routinen</string>
+    <string name="menu_slideshow">Empfohlene Routinen</string>
 
     <string name="first_name">Vorname</string>
     <string name="last_name">Nachname</string>

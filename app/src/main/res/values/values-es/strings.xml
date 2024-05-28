@@ -17,9 +17,9 @@
     <string name="nav_header_desc">Encabezado de navegación</string>
     <string name="action_settings">Políticas de privacidad</string>
 
-    <string name="menu_home">Inicio</string>
-    <string name="menu_gallery">Galería</string>
-    <string name="menu_slideshow">Presentación</string>
+    <string name="menu_home">Mi Perfil</string>
+    <string name="menu_gallery">Mis Rutinas</string>
+    <string name="menu_slideshow">Rutinas Recomendadas</string>
 
     <string name="first_name">Nombre</string>
     <string name="last_name">Apellido</string>
