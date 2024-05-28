@@ -41,7 +41,7 @@ To get started with the project, follow these steps:
 
 ### Unit and Instrumentation Tests
 
-- Unit tests and instrumentation tests are located in the `test` and `androidTest` directories respectively.
+- Unit tests and instrumentation tests are located in `test`.
 - **Unit Tests:** Use JUnit, Mockito, Robolectric, and Mockk.
 - **Instrumentation Tests:** Use Espresso and Mockito.
 
