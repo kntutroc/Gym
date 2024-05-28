@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import programacion.kimberly.gym.databinding.FragmentGalleryBinding
+import programacion.kimberly.gym.register.MainActivity
 
 class GalleryFragment : Fragment() {
 
@@ -105,6 +106,7 @@ class GalleryFragment : Fragment() {
         } else {
             Log.e(TAG, "Error: User not authenticated")
             Toast.makeText(context, "Error: User not authenticated", Toast.LENGTH_SHORT).show()
+            redirectToMainActivity()
         }
     }
 
@@ -113,5 +115,12 @@ class GalleryFragment : Fragment() {
         _binding = null
         // Detener la escucha
         routinesListener.remove()
+    }
+
+    private fun redirectToMainActivity() {
+        val intent = Intent(requireContext(), MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        requireActivity().finish()
     }
 }

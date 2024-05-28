@@ -1,5 +1,6 @@
 package programacion.kimberly.gym.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -13,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import programacion.kimberly.gym.BaseActivity
 import programacion.kimberly.gym.R
+import programacion.kimberly.gym.register.MainActivity
 
 class MedidasActivity : BaseActivity() {
 
@@ -46,7 +48,6 @@ class MedidasActivity : BaseActivity() {
             insets
         }
 
-
         backButton.setOnClickListener {
             onBackPressed()
         }
@@ -58,6 +59,43 @@ class MedidasActivity : BaseActivity() {
         buttonDeleteMeasurements.setOnClickListener {
             borrarMedidas()
         }
+
+        checkUserStatus()
+    }
+
+    private fun checkUserStatus() {
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) {
+            // Si no hay usuario autenticado, redirigir al MainActivity
+            redirectToMainActivity()
+            return
+        }
+
+        // Suscripción a cambios en el documento del usuario
+        firestore.collection("users").document(user.uid)
+            .addSnapshotListener { userDocument, error ->
+                if (error != null) {
+                    // Manejar el error
+                    return@addSnapshotListener
+                }
+
+                if (userDocument != null) {
+                    // Verificar si el usuario está deshabilitado
+                    val isDisabled = userDocument.getBoolean("disabled") ?: false
+                    if (isDisabled) {
+                        // Si el usuario está deshabilitado, cerrar sesión y redirigir al MainActivity
+                        FirebaseAuth.getInstance().signOut()
+                        redirectToMainActivity()
+                    }
+                }
+            }
+    }
+
+    private fun redirectToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        finish()
     }
 
     private fun guardarMedidas() {

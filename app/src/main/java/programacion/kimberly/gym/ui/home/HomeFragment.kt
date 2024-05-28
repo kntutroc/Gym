@@ -36,16 +36,32 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Obtener el usuario actual
         val user = FirebaseAuth.getInstance().currentUser
         if (user == null) {
-            // Redirecciona a la página principal si no hay usuario autenticado
-            Toast.makeText(context, "No user signed in.", Toast.LENGTH_SHORT).show()
-            val intent = Intent(activity, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-            activity?.finish()
+            // Si no hay usuario autenticado, redirigir al MainActivity
+            redirectToMainActivity()
             return
         }
+
+        // Suscripción a cambios en el documento del usuario
+        userDocumentListener = firestore.collection("users").document(user.uid)
+            .addSnapshotListener { userDocument, error ->
+                if (error != null) {
+                    // Manejar el error
+                    return@addSnapshotListener
+                }
+
+                if (userDocument != null) {
+                    // Verificar si el usuario está deshabilitado
+                    val isDisabled = userDocument.getBoolean("disabled") ?: false
+                    if (isDisabled) {
+                        // Si el usuario está deshabilitado, cerrar sesión y redirigir al MainActivity
+                        FirebaseAuth.getInstance().signOut()
+                        redirectToMainActivity()
+                    }
+                }
+            }
 
         // Bindeamos los botones
         binding.expandOptionsButton.setOnClickListener {
@@ -150,6 +166,13 @@ class HomeFragment : Fragment() {
     private fun calculateBMI(height: Double, weight: Double): Double {
         val heightInMeters = height / 100 // Convertir la altura de centímetros a metros
         return weight / (heightInMeters * heightInMeters)
+    }
+
+    private fun redirectToMainActivity() {
+        val intent = Intent(activity, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        startActivity(intent)
+        activity?.finish()
     }
 
     override fun onDestroyView() {

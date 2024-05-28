@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import programacion.kimberly.gym.ui.bar.SettingsActivity
 import programacion.kimberly.gym.ui.bar.UpdateDataActivity
 
 open class BaseActivity : AppCompatActivity() {

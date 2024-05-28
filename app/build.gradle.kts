@@ -70,7 +70,7 @@ dependencies {
     implementation("androidx.test:core-ktx:1.5.0")
     implementation("androidx.test.ext:junit-ktx:1.1.5")
     implementation("androidx.activity:activity-ktx:1.9.0")
-    implementation("androidx.activity:activity:1.9.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
 
     // Pruebas unitarias
     testImplementation("junit:junit:4.13.2")
@@ -92,7 +92,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
-    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("androidx.viewpager2:viewpager2:1.1.0")
 }
 
 apply(plugin = "com.google.gms.google-services")
