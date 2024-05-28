@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">GymAsk</string>
+    <string name="email">Электронная почта</string>
+    <string name="password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="username">Имя пользователя</string>
+    <string name="phone">Номер телефона</string>
+    <string name="select_photo">Выбрать фото профиля</string>
+    <string name="send_reset_email">Отправить письмо для сброса пароля</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="navigation_drawer_open">Открыть навигационное меню</string>
+    <string name="navigation_drawer_close">Закрыть навигационное меню</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Заголовок навигации</string>
+    <string name="action_settings">Политика конфиденциальности</string>
+
+    <string name="menu_home">Главная</string>
+    <string name="menu_gallery">Галерея</string>
+    <string name="menu_slideshow">Слайдшоу</string>
+
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="birth_year">Год рождения</string>
+    <string name="height">Рост (см)</string>
+    <string name="weight">Вес (кг)</string>
+    <string name="next">Далее</string>
+    <string name="male">Мужчина</string>
+    <string name="female">Женщина</string>
+
+    <string name="height_format">Рост\n%.1f см</string>
+    <string name="weight_format">Вес\n%.1f кг</string>
+    <string name="imc_format">ИМТ\n%.2f</string>
+    <string name="title_activity_medidas">MeasurementsActivity</string>
+    <string name="tab_text_1">Вкладка 1</string>
+    <string name="tab_text_2">Вкладка 2</string>
+    <string name="delete_routine">Удалить рутину</string>
+    <string name="error_loading_routine">Ошибка загрузки рутины</string>
+    <string name="view_routine">Просмотр рутины</string>
+
+    <string name="profile_name">Имя пользователя</string>
+    <string name="gender">Женщина/Мужчина</string>
+    <string name="gym_goer">Любитель фитнеса</string>
+    <string name="body_measurements">Измерения тела</string>
+    <string name="waist_measurement">Талия\n80см</string>
+    <string name="hip_measurement">Бедра\n95см</string>
+    <string name="biceps_measurement">Бицепс\n30см</string>
+    <string name="leg_measurement">Нога\n50см</string>
+    <string name="update_measurements">Обновить измерения</string>
+
+    <string name="my_routines">Мои рутины</string>
+    <string name="no_routines">Нет доступных рутин</string>
+    <string name="search_exercises">Поиск упражнений</string>
+    <string name="create_routine">Создать рутину</string>
+
+    <string name="back">Назад</string>
+    <string name="routine_name">Название рутины</string>
+    <string name="routine_details">Детали рутины</string>
+    <string name="routine_data">Данные рутины</string>
+
+    <string name="update_data">Обновить данные</string>
+    <string name="height_hint">Рост (см)</string>
+    <string name="weight_hint">Вес (кг)</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="personal_details">Личные данные</string>
+
+    <string name="enter_measurements">Введите измерения</string>
+    <string name="waist_cm">Талия (см)</string>
+    <string name="hip_cm">Бедра (см)</string>
+    <string name="biceps_cm">Бицепс (см)</string>
+    <string name="leg_cm">Нога (см)</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="enter_routine_name">Введите название рутины</string>
+    <string name="select_day">Выберите день</string>
+    <string name="select_muscle">Выберите мышцу</string>
+    <string name="search_exercise">Поиск упражнения</string>
+    <string name="add_exercise">+ Добавить упражнение</string>
+    <string name="remove_exercise">- Удалить упражнение</string>
+    <string name="save_routine">Сохранить рутину</string>
+    <string name="save_day">Сохранить день</string>
+    <string name="routine_name_hint">Название рутины</string>
+
+    <string name="filter_by_muscle">Фильтр по мышцам:</string>
+    <string name="search_muscle">Поиск мышцы</string>
+
+    <string name="my_profile">Мой профиль</string>
+    <string name="recommended_routines">Рекомендуемые рутины</string>
+
+    <string name="action_update_data">Обновить данные</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="login_info">Войти: %s</string>
+    <string name="sign_out">Выйти</string>
+
+    <string name="dialog_message">Если у вас возникли проблемы с приложением, отправьте нам сообщение, и мы ответим как можно скорее.</string>
+    <string name="dialog_name_hint">Имя</string>
+    <string name="dialog_email_hint">Электронная почта</string>
+    <string name="dialog_message_hint">Сообщение</string>
+
+    <string name="beginner">Начинающий</string>
+    <string name="intermediate">Средний</string>
+    <string name="advanced">Продвинутый</string>
+
+    <string name="beginner_image_description">Изображение рутины для начинающих</string>
+    <string name="intermediate_image_description">Изображение рутины среднего уровня</string>
+    <string name="advanced_image_description">Изображение рутины продвинутого уровня</string>
+
+    <string name="cardio_routine">Кардио рутина</string>
+    <string name="strength_cardio_routine">Сила + Кардио рутина</string>
+    <string name="strength_routine">Силовая рутина</string>
+    <string name="body_weight_routine">Рутина с собственным весом</string>
+    <string name="no_routines_available">Нет доступных рутин в данный момент.</string>
+    <string name="exercise_image">Изображение упражнения</string>
+    <string name="elliptical_machine_routine">Рутина на эллиптическом тренажере</string>
+    <string name="band_routine">Рутина с лентой</string>
+    <string name="assisted_routine">Ассистированная рутина</string>
+    <string name="barbell">Штанга</string>
+    <string name="dumbbell">Гантель</string>
+    <string name="kettlebell">Гиря</string>
+    <string name="cable">Трос</string>
+
+    <string name="abductors_adductors">Отводящие и приводящие мышцы</string>
+    <string name="triceps_pectoral">Трицепс, грудные и спинные мышцы</string>
+    <string name="glutes_quads_calves">Ягодицы, квадрицепсы и икры</string>
+    <string name="biceps_upper_back_abs">Бицепсы, верхняя часть спины и пресс</string>
+
+    <string name="dialog_title">ИНСТРУКЦИИ И ПРЕДУПРЕЖДЕНИЯ</string>
+    <string name="dialog_message_routines">Есть несколько упражнений в каждой рутине, выбирайте те, которые подходят вам лучше всего. Вы можете просмотреть все, проводя влево или вправо. Удачи!</string>
+
+    <string-array name="days_array">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+    </string-array>
+</resources>

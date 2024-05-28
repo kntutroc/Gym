@@ -128,6 +128,9 @@
     <string name="glutes_quads_calves">Glutes, Quads, and Calves</string>
     <string name="biceps_upper_back_abs">Biceps, Upper Back, and Abs</string>
 
+    <string name="dialog_title">INSTRUCTIONS AND WARNINGS</string>
+    <string name="dialog_message_routines">There are several exercises per routine, choose the ones that suit you best. You can view all of them by swiping left or right. Good luck!</string>
+
     <string-array name="days_array">
         <item>Monday</item>
         <item>Tuesday</item>

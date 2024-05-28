@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">GymAsk</string>
+    <string name="email">E-Mail</string>
+    <string name="password">Passwort</string>
+    <string name="login">Anmelden</string>
+    <string name="register">Registrieren</string>
+    <string name="forgot_password">Passwort vergessen?</string>
+    <string name="username">Benutzername</string>
+    <string name="phone">Telefonnummer</string>
+    <string name="select_photo">Profilfoto auswählen</string>
+    <string name="send_reset_email">Reset-E-Mail senden</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="navigation_drawer_open">Navigationsmenü öffnen</string>
+    <string name="navigation_drawer_close">Navigationsmenü schließen</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigationskopfzeile</string>
+    <string name="action_settings">Datenschutzrichtlinien</string>
+
+    <string name="menu_home">Startseite</string>
+    <string name="menu_gallery">Galerie</string>
+    <string name="menu_slideshow">Diashow</string>
+
+    <string name="first_name">Vorname</string>
+    <string name="last_name">Nachname</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="birth_year">Geburtsjahr</string>
+    <string name="height">Größe (cm)</string>
+    <string name="weight">Gewicht (kg)</string>
+    <string name="next">Weiter</string>
+    <string name="male">Männlich</string>
+    <string name="female">Weiblich</string>
+
+    <string name="height_format">Größe\n%.1f cm</string>
+    <string name="weight_format">Gewicht\n%.1f kg</string>
+    <string name="imc_format">BMI\n%.2f</string>
+    <string name="title_activity_medidas">MeasurementsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="delete_routine">Routine löschen</string>
+    <string name="error_loading_routine">Fehler beim Laden der Routine</string>
+    <string name="view_routine">Routine anzeigen</string>
+
+    <string name="profile_name">Benutzername</string>
+    <string name="gender">Frau/Mann</string>
+    <string name="gym_goer">Fitness-Enthusiast</string>
+    <string name="body_measurements">Körpermaße</string>
+    <string name="waist_measurement">Taille\n80cm</string>
+    <string name="hip_measurement">Hüfte\n95cm</string>
+    <string name="biceps_measurement">Bizeps\n30cm</string>
+    <string name="leg_measurement">Bein\n50cm</string>
+    <string name="update_measurements">Maße aktualisieren</string>
+
+    <string name="my_routines">Meine Routinen</string>
+    <string name="no_routines">Keine Routinen verfügbar</string>
+    <string name="search_exercises">Übungen suchen</string>
+    <string name="create_routine">Routine erstellen</string>
+
+    <string name="back">Zurück</string>
+    <string name="routine_name">Routinenname</string>
+    <string name="routine_details">Routinedetails</string>
+    <string name="routine_data">Routinedaten</string>
+
+    <string name="update_data">Daten aktualisieren</string>
+    <string name="height_hint">Größe (cm)</string>
+    <string name="weight_hint">Gewicht (kg)</string>
+    <string name="save">Speichern</string>
+    <string name="delete">Löschen</string>
+    <string name="personal_details">Persönliche Daten</string>
+
+    <string name="enter_measurements">Maße eingeben</string>
+    <string name="waist_cm">Taille (cm)</string>
+    <string name="hip_cm">Hüfte (cm)</string>
+    <string name="biceps_cm">Bizeps (cm)</string>
+    <string name="leg_cm">Bein (cm)</string>
+    <string name="welcome">Willkommen</string>
+    <string name="enter_routine_name">Routinenname eingeben</string>
+    <string name="select_day">Tag auswählen</string>
+    <string name="select_muscle">Muskel auswählen</string>
+    <string name="search_exercise">Übung suchen</string>
+    <string name="add_exercise">+ Übung hinzufügen</string>
+    <string name="remove_exercise">- Übung entfernen</string>
+    <string name="save_routine">Routine speichern</string>
+    <string name="save_day">Tag speichern</string>
+    <string name="routine_name_hint">Routinenname</string>
+
+    <string name="filter_by_muscle">Nach Muskel filtern:</string>
+    <string name="search_muscle">Muskel suchen</string>
+
+    <string name="my_profile">Mein Profil</string>
+    <string name="recommended_routines">Empfohlene Routinen</string>
+
+    <string name="action_update_data">Daten aktualisieren</string>
+    <string name="cancel">Abbrechen</string>
+
+    <string name="login_info">Anmeldung: %s</string>
+    <string name="sign_out">Abmelden</string>
+
+    <string name="dialog_message">Wenn Sie Probleme mit der App haben, senden Sie uns bitte eine Nachricht und wir werden so schnell wie möglich antworten.</string>
+    <string name="dialog_name_hint">Name</string>
+    <string name="dialog_email_hint">E-Mail</string>
+    <string name="dialog_message_hint">Nachricht</string>
+
+    <string name="beginner">Anfänger</string>
+    <string name="intermediate">Mittelstufe</string>
+    <string name="advanced">Fortgeschritten</string>
+
+    <string name="beginner_image_description">Bild der Anfänger-Routine</string>
+    <string name="intermediate_image_description">Bild der Mittelstufen-Routine</string>
+    <string name="advanced_image_description">Bild der Fortgeschrittenen-Routine</string>
+
+    <string name="cardio_routine">Cardio-Routine</string>
+    <string name="strength_cardio_routine">Kraft + Cardio-Routine</string>
+    <string name="strength_routine">Kraft-Routine</string>
+    <string name="body_weight_routine">Körpergewichts-Routine</string>
+    <string name="no_routines_available">Derzeit keine Routinen verfügbar.</string>
+    <string name="exercise_image">Übungsbild</string>
+    <string name="elliptical_machine_routine">Ellipsentrainer-Routine</string>
+    <string name="band_routine">Band-Routine</string>
+    <string name="assisted_routine">Assistierte Routine</string>
+    <string name="barbell">Langhantel</string>
+    <string name="dumbbell">Kurzhantel</string>
+    <string name="kettlebell">Kettlebell</string>
+    <string name="cable">Kabel</string>
+
+    <string name="abductors_adductors">Abduktoren und Adduktoren</string>
+    <string name="triceps_pectoral">Trizeps, Brust und Rücken</string>
+    <string name="glutes_quads_calves">Gesäß, Quadrizeps und Waden</string>
+    <string name="biceps_upper_back_abs">Bizeps, oberer Rücken und Bauch</string>
+
+    <string name="dialog_title">ANWEISUNGEN UND WARNUNGEN</string>
+    <string name="dialog_message_routines">Es gibt mehrere Übungen pro Routine, wählen Sie die aus, die am besten zu Ihnen passen. Sie können alle anzeigen, indem Sie nach links oder rechts wischen. Viel Glück!</string>
+
+    <string-array name="days_array">
+        <item>Montag</item>
+        <item>Dienstag</item>
+        <item>Mittwoch</item>
+        <item>Donnerstag</item>
+        <item>Freitag</item>
+        <item>Samstag</item>
+        <item>Sonntag</item>
+    </string-array>
+</resources>

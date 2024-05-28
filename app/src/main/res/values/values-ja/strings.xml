@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">GymAsk</string>
+    <string name="email">メール</string>
+    <string name="password">パスワード</string>
+    <string name="login">ログイン</string>
+    <string name="register">登録</string>
+    <string name="forgot_password">パスワードを忘れましたか？</string>
+    <string name="username">ユーザー名</string>
+    <string name="phone">電話番号</string>
+    <string name="select_photo">プロフィール写真を選択</string>
+    <string name="send_reset_email">リセットメールを送信</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
+    <string name="navigation_drawer_close">ナビゲーションドロワーを閉じる</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">ナビゲーションヘッダー</string>
+    <string name="action_settings">プライバシーポリシー</string>
+
+    <string name="menu_home">ホーム</string>
+    <string name="menu_gallery">ギャラリー</string>
+    <string name="menu_slideshow">スライドショー</string>
+
+    <string name="first_name">名</string>
+    <string name="last_name">姓</string>
+    <string name="phone_number">電話番号</string>
+    <string name="birth_year">生年</string>
+    <string name="height">身長 (cm)</string>
+    <string name="weight">体重 (kg)</string>
+    <string name="next">次へ</string>
+    <string name="male">男性</string>
+    <string name="female">女性</string>
+
+    <string name="height_format">身長\n%.1f cm</string>
+    <string name="weight_format">体重\n%.1f kg</string>
+    <string name="imc_format">BMI\n%.2f</string>
+    <string name="title_activity_medidas">MeasurementsActivity</string>
+    <string name="tab_text_1">タブ 1</string>
+    <string name="tab_text_2">タブ 2</string>
+    <string name="delete_routine">ルーチンを削除</string>
+    <string name="error_loading_routine">ルーチンの読み込みエラー</string>
+    <string name="view_routine">ルーチンを表示</string>
+
+    <string name="profile_name">ユーザー名</string>
+    <string name="gender">女性/男性</string>
+    <string name="gym_goer">ジム愛好者</string>
+    <string name="body_measurements">体の測定</string>
+    <string name="waist_measurement">ウエスト\n80cm</string>
+    <string name="hip_measurement">ヒップ\n95cm</string>
+    <string name="biceps_measurement">上腕二頭筋\n30cm</string>
+    <string name="leg_measurement">脚\n50cm</string>
+    <string name="update_measurements">測定を更新</string>
+
+    <string name="my_routines">私のルーチン</string>
+    <string name="no_routines">利用可能なルーチンはありません</string>
+    <string name="search_exercises">エクササイズを検索</string>
+    <string name="create_routine">ルーチンを作成</string>
+
+    <string name="back">戻る</string>
+    <string name="routine_name">ルーチン名</string>
+    <string name="routine_details">ルーチンの詳細</string>
+    <string name="routine_data">ルーチンデータ</string>
+
+    <string name="update_data">データを更新</string>
+    <string name="height_hint">身長 (cm)</string>
+    <string name="weight_hint">体重 (kg)</string>
+    <string name="save">保存</string>
+    <string name="delete">削除</string>
+    <string name="personal_details">個人情報</string>
+
+    <string name="enter_measurements">測定値を入力</string>
+    <string name="waist_cm">ウエスト (cm)</string>
+    <string name="hip_cm">ヒップ (cm)</string>
+    <string name="biceps_cm">上腕二頭筋 (cm)</string>
+    <string name="leg_cm">脚 (cm)</string>
+    <string name="welcome">ようこそ</string>
+    <string name="enter_routine_name">ルーチン名を入力</string>
+    <string name="select_day">日を選択</string>
+    <string name="select_muscle">筋肉を選択</string>
+    <string name="search_exercise">エクササイズを検索</string>
+    <string name="add_exercise">+ エクササイズを追加</string>
+    <string name="remove_exercise">- エクササイズを削除</string>
+    <string name="save_routine">ルーチンを保存</string>
+    <string name="save_day">日を保存</string>
+    <string name="routine_name_hint">ルーチン名</string>
+
+    <string name="filter_by_muscle">筋肉でフィルタリング:</string>
+    <string name="search_muscle">筋肉を検索</string>
+
+    <string name="my_profile">マイプロフィール</string>
+    <string name="recommended_routines">推奨ルーチン</string>
+
+    <string name="action_update_data">データを更新</string>
+    <string name="cancel">キャンセル</string>
+
+    <string name="login_info">ログイン: %s</string>
+    <string name="sign_out">サインアウト</string>
+
+    <string name="dialog_message">アプリに関する問題がある場合は、メッセージを送信してください。できるだけ早く返信いたします。</string>
+    <string name="dialog_name_hint">名前</string>
+    <string name="dialog_email_hint">メール</string>
+    <string name="dialog_message_hint">メッセージ</string>
+
+    <string name="beginner">初心者</string>
+    <string name="intermediate">中級者</string>
+    <string name="advanced">上級者</string>
+
+    <string name="beginner_image_description">初心者レベルのルーチン画像</string>
+    <string name="intermediate_image_description">中級者レベルのルーチン画像</string>
+    <string name="advanced_image_description">上級者レベルのルーチン画像</string>
+
+    <string name="cardio_routine">有酸素運動ルーチン</string>
+    <string name="strength_cardio_routine">筋力 + 有酸素運動ルーチン</string>
+    <string name="strength_routine">筋力ルーチン</string>
+    <string name="body_weight_routine">自重トレーニングルーチン</string>
+    <string name="no_routines_available">現在利用可能なルーチンはありません。</string>
+    <string name="exercise_image">エクササイズ画像</string>
+    <string name="elliptical_machine_routine">エリプティカルマシンルーチン</string>
+    <string name="band_routine">バンドルーチン</string>
+    <string name="assisted_routine">アシストルーチン</string>
+    <string name="barbell">バーベル</string>
+    <string name="dumbbell">ダンベル</string>
+    <string name="kettlebell">ケトルベル</string>
+    <string name="cable">ケーブル</string>
+
+    <string name="abductors_adductors">外転筋と内転筋</string>
+    <string name="triceps_pectoral">三頭筋、大胸筋と広背筋</string>
+    <string name="glutes_quads_calves">臀筋、四頭筋とふくらはぎ</string>
+    <string name="biceps_upper_back_abs">二頭筋、上背部と腹筋</string>
+
+    <string name="dialog_title">説明と警告</string>
+    <string name="dialog_message_routines">各ルーチンにはいくつかのエクササイズが含まれています。最も適したものを選んでください。左右にスワイプすることで全てを表示できます。頑張ってください！</string>
+
+    <string-array name="days_array">
+        <item>月曜日</item>
+        <item>火曜日</item>
+        <item>水曜日</item>
+        <item>木曜日</item>
+        <item>金曜日</item>
+        <item>土曜日</item>
+        <item>日曜日</item>
+    </string-array>
+</resources>

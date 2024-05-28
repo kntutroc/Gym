@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">GymAsk</string>
+    <string name="email">电子邮件</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="forgot_password">忘记密码？</string>
+    <string name="username">用户名</string>
+    <string name="phone">电话号码</string>
+    <string name="select_photo">选择个人照片</string>
+    <string name="send_reset_email">发送重置电子邮件</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">导航标题</string>
+    <string name="action_settings">隐私政策</string>
+
+    <string name="menu_home">首页</string>
+    <string name="menu_gallery">画廊</string>
+    <string name="menu_slideshow">幻灯片</string>
+
+    <string name="first_name">名字</string>
+    <string name="last_name">姓氏</string>
+    <string name="phone_number">电话号码</string>
+    <string name="birth_year">出生年份</string>
+    <string name="height">身高 (cm)</string>
+    <string name="weight">体重 (kg)</string>
+    <string name="next">下一步</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+    <string name="height_format">身高\n%.1f cm</string>
+    <string name="weight_format">体重\n%.1f kg</string>
+    <string name="imc_format">BMI\n%.2f</string>
+    <string name="title_activity_medidas">MeasurementsActivity</string>
+    <string name="tab_text_1">标签 1</string>
+    <string name="tab_text_2">标签 2</string>
+    <string name="delete_routine">删除计划</string>
+    <string name="error_loading_routine">加载计划时出错</string>
+    <string name="view_routine">查看计划</string>
+
+    <string name="profile_name">用户名</string>
+    <string name="gender">女/男</string>
+    <string name="gym_goer">健身爱好者</string>
+    <string name="body_measurements">身体测量</string>
+    <string name="waist_measurement">腰围\n80cm</string>
+    <string name="hip_measurement">臀围\n95cm</string>
+    <string name="biceps_measurement">肱二头肌\n30cm</string>
+    <string name="leg_measurement">腿围\n50cm</string>
+    <string name="update_measurements">更新测量</string>
+
+    <string name="my_routines">我的计划</string>
+    <string name="no_routines">没有可用的计划</string>
+    <string name="search_exercises">搜索锻炼</string>
+    <string name="create_routine">创建计划</string>
+
+    <string name="back">返回</string>
+    <string name="routine_name">计划名称</string>
+    <string name="routine_details">计划详情</string>
+    <string name="routine_data">计划数据</string>
+
+    <string name="update_data">更新数据</string>
+    <string name="height_hint">身高 (cm)</string>
+    <string name="weight_hint">体重 (kg)</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="personal_details">个人信息</string>
+
+    <string name="enter_measurements">输入测量值</string>
+    <string name="waist_cm">腰围 (cm)</string>
+    <string name="hip_cm">臀围 (cm)</string>
+    <string name="biceps_cm">肱二头肌 (cm)</string>
+    <string name="leg_cm">腿围 (cm)</string>
+    <string name="welcome">欢迎</string>
+    <string name="enter_routine_name">输入计划名称</string>
+    <string name="select_day">选择日期</string>
+    <string name="select_muscle">选择肌肉</string>
+    <string name="search_exercise">搜索锻炼</string>
+    <string name="add_exercise">+ 添加锻炼</string>
+    <string name="remove_exercise">- 移除锻炼</string>
+    <string name="save_routine">保存计划</string>
+    <string name="save_day">保存日期</string>
+    <string name="routine_name_hint">计划名称</string>
+
+    <string name="filter_by_muscle">按肌肉筛选:</string>
+    <string name="search_muscle">搜索肌肉</string>
+
+    <string name="my_profile">我的资料</string>
+    <string name="recommended_routines">推荐的计划</string>
+
+    <string name="action_update_data">更新数据</string>
+    <string name="cancel">取消</string>
+
+    <string name="login_info">登录: %s</string>
+    <string name="sign_out">退出登录</string>
+
+    <string name="dialog_message">如果您对应用程序有任何问题，请发送消息，我们会尽快回复您。</string>
+    <string name="dialog_name_hint">姓名</string>
+    <string name="dialog_email_hint">电子邮件</string>
+    <string name="dialog_message_hint">消息</string>
+
+    <string name="beginner">初学者</string>
+    <string name="intermediate">中级</string>
+    <string name="advanced">高级</string>
+
+    <string name="beginner_image_description">初学者水平计划图片</string>
+    <string name="intermediate_image_description">中级水平计划图片</string>
+    <string name="advanced_image_description">高级水平计划图片</string>
+
+    <string name="cardio_routine">有氧计划</string>
+    <string name="strength_cardio_routine">力量 + 有氧计划</string>
+    <string name="strength_routine">力量计划</string>
+    <string name="body_weight_routine">自重计划</string>
+    <string name="no_routines_available">目前没有可用的计划。</string>
+    <string name="exercise_image">锻炼图片</string>
+    <string name="elliptical_machine_routine">椭圆机计划</string>
+    <string name="band_routine">带子计划</string>
+    <string name="assisted_routine">辅助计划</string>
+    <string name="barbell">杠铃</string>
+    <string name="dumbbell">哑铃</string>
+    <string name="kettlebell">壶铃</string>
+    <string name="cable">拉索</string>
+
+    <string name="abductors_adductors">外展肌和内收肌</string>
+    <string name="triceps_pectoral">肱三头肌, 胸大肌和背阔肌</string>
+    <string name="glutes_quads_calves">臀大肌, 股四头肌和小腿肌</string>
+    <string name="biceps_upper_back_abs">肱二头肌, 上背部和腹肌</string>
+
+    <string name="dialog_title">说明和警告</string>
+    <string name="dialog_message_routines">每个计划都有几个锻炼，选择最适合你的。你可以通过向左或向右滑动来查看所有内容。祝你好运！</string>
+
+    <string-array name="days_array">
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+        <item>星期日</item>
+    </string-array>
+</resources>
