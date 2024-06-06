@@ -23,6 +23,7 @@ class HomeFragment : Fragment() {
     private val firestore = FirebaseFirestore.getInstance()
     private lateinit var userDocumentListener: ListenerRegistration
     private lateinit var measurementsDocumentListener: ListenerRegistration
+    private lateinit var profilePhotoListener: ListenerRegistration
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -72,7 +73,7 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, MedidasActivity::class.java))
         }
 
-        // Nos suscribimos a los cambios
+        // Nos suscribimos a los cambios en los datos del usuario
         userDocumentListener = firestore.collection("users").document(user.uid)
             .addSnapshotListener { userDocument, error ->
                 if (error != null) {
@@ -90,7 +91,7 @@ class HomeFragment : Fragment() {
                     val height = userDocument.getDouble("height") ?: 0.0
                     val weight = userDocument.getDouble("weight") ?: 0.0
 
-                    // Updateamos UI con los datos
+                    // Actualizamos la UI con los datos
                     binding.nameTextView.text = fullName
                     binding.genderTextView.text = gender
                     binding.heightTextView.text = "Height \n$height"
@@ -99,40 +100,13 @@ class HomeFragment : Fragment() {
                     binding.imcTextView.text = "BMI \n%.2f".format(bmi)
 
                     // Cargamos la foto de perfil
-                    val userId = FirebaseAuth.getInstance().currentUser?.uid
-
-                    if (userId != null) {
-                        val profilePhotoRef = firestore.collection("profile_photos").document(userId)
-
-                        profilePhotoRef.get()
-                            .addOnSuccessListener { documentSnapshot ->
-                                if (documentSnapshot.exists()) {
-                                    // Cargamos con Glide la foto
-                                    val photoUrl = documentSnapshot.getString("photoUrl")
-                                    if (photoUrl != null) {
-                                        Glide.with(requireContext())
-                                            .load(photoUrl)
-                                            .placeholder(R.drawable.default_profile_picture)
-                                            .error(R.drawable.default_profile_picture) // Default image en caso deerror
-                                            .into(binding.profileImageView)
-                                    }
-                                } else {
-                                    // Si no existe el documento carga la foto por defecto
-                                    Glide.with(requireContext())
-                                        .load(R.drawable.default_profile_picture)
-                                        .into(binding.profileImageView)
-                                }
-                            }
-                            .addOnFailureListener { e ->
-                                Toast.makeText(context, "Error retrieving profile photo: ${e.message}", Toast.LENGTH_SHORT).show()
-                            }
-                    }
+                    subscribeToProfilePhoto(user.uid)
                 } else {
                     Toast.makeText(context, "No user data found.", Toast.LENGTH_SHORT).show()
                 }
             }
 
-        // Nos suscribimos a los datos
+        // Nos suscribimos a los datos de las medidas
         measurementsDocumentListener = firestore.collection("measurements").document(user.uid)
             .addSnapshotListener { measurementDocument, error ->
                 if (error != null) {
@@ -142,23 +116,45 @@ class HomeFragment : Fragment() {
                 }
 
                 if (measurementDocument != null && measurementDocument.exists()) {
-
                     val waistMeasurement = measurementDocument.getDouble("waistMeasurement") ?: 0.0
                     val hipMeasurement = measurementDocument.getDouble("hipMeasurement") ?: 0.0
                     val bicepsMeasurement = measurementDocument.getDouble("bicepsMeasurement") ?: 0.0
                     val legMeasurement = measurementDocument.getDouble("legMeasurement") ?: 0.0
-
 
                     binding.waistMeasurementTextView.text = "Waist\n$waistMeasurement"
                     binding.hipMeasurementTextView.text = "Hip\n$hipMeasurement"
                     binding.bicepsMeasurementTextView.text = "Biceps\n$bicepsMeasurement"
                     binding.legMeasurementTextView.text = "Legs\n$legMeasurement"
                 } else {
-
                     binding.waistMeasurementTextView.text = "Waist\n0.0"
                     binding.hipMeasurementTextView.text = "Hip\n0.0"
                     binding.bicepsMeasurementTextView.text = "Biceps\n0.0"
                     binding.legMeasurementTextView.text = "Legs\n0.0"
+                }
+            }
+    }
+
+    private fun subscribeToProfilePhoto(userId: String) {
+        profilePhotoListener = firestore.collection("profile_photos").document(userId)
+            .addSnapshotListener { documentSnapshot, error ->
+                if (error != null) {
+                    Toast.makeText(context, "Error retrieving profile photo: ${error.message}", Toast.LENGTH_SHORT).show()
+                    return@addSnapshotListener
+                }
+
+                if (documentSnapshot != null && documentSnapshot.exists()) {
+                    val photoUrl = documentSnapshot.getString("photoUrl")
+                    if (photoUrl != null) {
+                        Glide.with(requireContext())
+                            .load(photoUrl)
+                            .placeholder(R.drawable.default_profile_picture)
+                            .error(R.drawable.default_profile_picture) // Imagen por defecto en caso de error
+                            .into(binding.profileImageView)
+                    }
+                } else {
+                    Glide.with(requireContext())
+                        .load(R.drawable.default_profile_picture)
+                        .into(binding.profileImageView)
                 }
             }
     }
@@ -182,5 +178,7 @@ class HomeFragment : Fragment() {
         userDocumentListener.remove()
         // Detener la escucha de cambios en el documento de las medidas corporales
         measurementsDocumentListener.remove()
+        // Detener la escucha de cambios en el documento de la foto de perfil
+        profilePhotoListener.remove()
     }
 }
