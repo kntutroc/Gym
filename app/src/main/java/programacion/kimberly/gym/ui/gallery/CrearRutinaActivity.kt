@@ -87,7 +87,11 @@ class CrearRutinaActivity : AppCompatActivity() {
 
     private fun saveDay() {
         val selectedDay = daySpinner.selectedItem.toString()
-        val selectedExercises = getSelectedExercises()
+        val selectedExercises = getSelectedExercises().toMutableList() // Convertir a lista mutable
+
+        // Agregar el primer spinner manualmente a la lista de ejercicios seleccionados
+        val firstSpinnerExercise = exerciseSpinner.selectedItem.toString()
+        selectedExercises.add(firstSpinnerExercise)
 
         // Si el día ya existe en el mapa, obtiene la lista existente, de lo contrario crea una nueva
         val exercisesForDay = routineData.getOrPut(selectedDay) { mutableListOf() }
@@ -101,6 +105,7 @@ class CrearRutinaActivity : AppCompatActivity() {
         Toast.makeText(this, "Day saved successfully.", Toast.LENGTH_SHORT).show()
         clearExerciseSpinners() // Limpia los Spinners para el siguiente día
     }
+
 
     private fun clearExerciseSpinners() {
         spinnerContainer.removeAllViews()
@@ -120,36 +125,25 @@ class CrearRutinaActivity : AppCompatActivity() {
             return
         }
 
-        // Verificar si el nombre de la rutina ya existe
-        val routinesCollection = FirebaseFirestore.getInstance()
+        // Guardar la rutina independientemente de si el nombre ya existe o no
+        val fullRoutineData = hashMapOf(
+            "name" to routineName,
+            "days" to routineData
+        )
+        FirebaseFirestore.getInstance()
             .collection("routines")
             .document(currentUser.uid)
             .collection("userRoutines")
-
-        routinesCollection.whereEqualTo("name", routineName).get()
-            .addOnSuccessListener { documents ->
-                if (documents.isEmpty) {
-                    // Guardar la rutina si el nombre no existe
-                    val fullRoutineData = hashMapOf(
-                        "name" to routineName,
-                        "days" to routineData
-                    )
-                    routinesCollection.add(fullRoutineData)
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Routine saved successfully.", Toast.LENGTH_SHORT).show()
-                            finish() // Regresar a la pantalla anterior
-                        }
-                        .addOnFailureListener { e ->
-                            Toast.makeText(this, "Error saving routine: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
-                        }
-                } else {
-                    Toast.makeText(this, "A routine with that name already exists.", Toast.LENGTH_SHORT).show()
-                }
+            .add(fullRoutineData)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Routine saved successfully.", Toast.LENGTH_SHORT).show()
+                finish() // Regresar a la pantalla anterior
             }
             .addOnFailureListener { e ->
-                Toast.makeText(this, "Error checking routine name: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error saving routine: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun getSelectedExercises(): List<String> {
         val exercises = mutableListOf<String>()
