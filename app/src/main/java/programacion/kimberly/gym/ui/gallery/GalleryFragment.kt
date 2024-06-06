@@ -68,14 +68,7 @@ class GalleryFragment : Fragment() {
                         recyclerView.adapter = RoutineAdapter(
                             routines,
                             onDeleteClick = { routine ->
-                                routinesRef.document(routine.id).delete()
-                                    .addOnSuccessListener {
-                                        Toast.makeText(context, "Routine removed", Toast.LENGTH_SHORT).show()
-                                    }
-                                    .addOnFailureListener { e ->
-                                        Log.e(TAG, "Error deleting routine: ", e)
-                                        Toast.makeText(context, "Error deleting routine: ${e.message}", Toast.LENGTH_SHORT).show()
-                                    }
+                                showDeleteConfirmationDialog(routine)
                             },
                             onViewClick = { routine ->
                                 val intent = Intent(requireContext(), VerRutina::class.java).apply {
@@ -122,5 +115,28 @@ class GalleryFragment : Fragment() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         requireActivity().finish()
+    }
+
+    private fun showDeleteConfirmationDialog(routine: Routine) {
+        val dialog = DeleteRoutineDialog(routine.name) {
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            val uid = currentUser?.uid
+
+            if (uid != null) {
+                val routinesRef = FirebaseFirestore.getInstance().collection("routines").document(uid).collection("userRoutines")
+                routinesRef.document(routine.id).delete()
+                    .addOnSuccessListener {
+                        Toast.makeText(context, "Routine removed", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e(TAG, "Error deleting routine: ", e)
+                        Toast.makeText(context, "Error deleting routine: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+            } else {
+                Log.e(TAG, "Error: User not authenticated")
+                Toast.makeText(context, "Error: User not authenticated", Toast.LENGTH_SHORT).show()
+            }
+        }
+        dialog.show(parentFragmentManager, "delete_dialog")
     }
 }

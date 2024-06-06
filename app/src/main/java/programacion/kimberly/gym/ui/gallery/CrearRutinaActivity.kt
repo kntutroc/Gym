@@ -92,8 +92,10 @@ class CrearRutinaActivity : AppCompatActivity() {
         // Si el día ya existe en el mapa, obtiene la lista existente, de lo contrario crea una nueva
         val exercisesForDay = routineData.getOrPut(selectedDay) { mutableListOf() }
 
+        // Borra solo los ejercicios que ya existen en la lista para evitar duplicados
+        exercisesForDay.removeAll(selectedExercises)
+
         // Agrega todos los ejercicios seleccionados a la lista del día
-        exercisesForDay.clear() // Limpia la lista actual para evitar duplicados
         exercisesForDay.addAll(selectedExercises)
 
         Toast.makeText(this, "Day saved successfully.", Toast.LENGTH_SHORT).show()
